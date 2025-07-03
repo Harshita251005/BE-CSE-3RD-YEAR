@@ -1,0 +1,10 @@
+# request send and respond between frontend , backend and database that architecture is known as web architecture.
+to create api there are 2 creteria
+1. Type(get,post,put,patch,delete)
+2. path("/","/user","/all/users")
+a) get => to get data from backend(fastest response).
+b) post => to send data to backend(secure way).
+c) put => to update a data in backend.
+d) patch => to update partial data in backend.
+e) delete => te delete a data in backend.
+404 error => not found

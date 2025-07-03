@@ -1,0 +1,20 @@
+over-ridding
+over-loading
+inheritance
+Type-casting
+Error - Handling
+Exception - Handling
+Array, ArrayList
+collection framework
+class and interface difference
+Arraylist, linkedList
+class,interface
+Set
+roadmap =
+core java(oops, exception Handling, collection framework multithreading)
+JDBC
+servelet
+spring 
+Hibernate
+spring boot
+microservice

@@ -1,0 +1,15 @@
+oops
+1. class object
+2. data hiding
+3. abstraction
+4. abstract class(extends), interface(implements)
+5. abstract method , concrete method
+6. encapsulation
+7. Inheritance
+8. case studies of Inheritance
+9. types of Inheritance
+10. Polymorphism
+11. types of Polymorphism (method overloading and method overriding) 
+12. ambhiguity issue btw string ang string buffer class 
+13. overriding marriagr eg (parents class ke method ko redefined karna child class main)
+14. packages
