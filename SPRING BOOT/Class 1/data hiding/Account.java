@@ -1,6 +1,4 @@
-// package SPRING BOOT.Class 2;
-
-// public package Datahidding;
+// package Datahidding;
 
 // public class Account {
  
@@ -14,6 +12,4 @@
 // 	public void setBalance(double balance) {
 // 		this.balance = balance;
 // 	}
-// } {
-    
 // }
