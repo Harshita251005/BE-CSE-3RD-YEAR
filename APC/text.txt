@@ -2,3 +2,15 @@
 2.inheritance
 3.exception handling
 4.string
+5.collection framework
+-> Hashset
+-> LinkedList
+-> Stack
+6.Comparator
+. TreeSet
+7. Multithreading
+. Ennumeration
+. Map
+. Iterator
+8.Synchronization
+9.lambda Expression
