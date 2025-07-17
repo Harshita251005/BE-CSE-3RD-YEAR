@@ -6,7 +6,7 @@ public class string {
         System.out.println(a);
 
 
-        StringBuffer str = new StringBuffer("Wasif");
+        StringBuffer str = new StringBuffer("Wasif"); 
         str.append("arshad");
         System.out.println(str);
 
@@ -23,9 +23,13 @@ public class string {
         String s3 = "Wasif";
         String s4 = "Wasif";
         System.out.println(s3 == s4); // true, because they refer to the same string literal in the string pool
-        System.out.println(s3.equals(s4)); // true, because they have the same content
-
-
-        
+        System.out.println(s3.equals(s4)); // true, because they have the same content        
     }
 }
+
+// This code demonstrates string manipulation in Java, including concatenation, StringBuffer, StringBuilder, and string comparison.
+// It shows how to create strings, append to them, and compare them using both reference equality and content equality.
+// The code also illustrates the difference between using `new String()` and string literals, highlighting how Java handles string objects in memory.
+// The output will show the original string, the concatenated string, the StringBuffer and StringBuilder results,
+// and the results of comparing strings using both `==` and `.equals()`.
+

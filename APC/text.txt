@@ -1,0 +1,4 @@
+1.data hiding
+2.inheritance
+3.exception handling
+4.string
