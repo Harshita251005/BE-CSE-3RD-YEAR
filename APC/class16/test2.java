@@ -1,24 +1,21 @@
 import java.io.*;
 
-class test1 {
+class test2 {
     public static void main(String[] args) throws IOException {
         // Create directory
-        File dir = new File("bufferwriter");
+        File dir = new File("printwriter");
         dir.mkdir(); // Create the directory if it does not exist
 
         // Create file inside the directory
         File file = new File(dir, "file1.txt");
         file.createNewFile(); // Create the file if it does not exist
 
-        // Write to the file using BufferedWriter
-        FileWriter fw = new FileWriter(file, true); // Append mode
-        BufferedWriter bw = new BufferedWriter(fw);
-        bw.write("Hello, World!");
-        bw.newLine(); // Add a new line
-        bw.write("This is a test file.");
-        bw.newLine();
-        bw.write("100");
-        bw.close(); // Close the BufferedWriter
+        // Write to file using PrintWriter
+        PrintWriter pw = new PrintWriter(file); // Pass the file to PrintWriter
+        pw.println("Hello, World!"); // Write a line to the file
+        pw.println("This is a test file."); // Write another line
+        pw.print(100); // Write a number
+        pw.close(); // Close the PrintWriter
 
         // Read from the file using BufferedReader
         FileReader fr = new FileReader(file);
