@@ -24,7 +24,7 @@ class test1 {
         BufferedReader br = new BufferedReader(fr);
         String line;
         while ((line = br.readLine()) != null) {
-            System.out.println(line); // Print each line
+            System.out.println(line); // Print each line to the console
         }
         br.close(); // Close the BufferedReader
     }
