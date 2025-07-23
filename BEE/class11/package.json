@@ -1,0 +1,17 @@
+{
+  "name": "@harshita251005/otp-handler",
+  "version": "1.0.0",
+  "description": "It generates otp and verify it",
+  "keywords": [
+    "otp",
+    "otp-handler",
+    "otp-generator"
+  ],
+  "license": "ISC",
+  "author": "harshita",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
