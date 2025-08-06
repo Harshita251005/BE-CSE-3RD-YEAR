@@ -5,14 +5,14 @@ const PORT = 4000;
 require("dotenv").config();
 const path = require("path");
 // routers
-const todoRouter = require("./routes/todo.routes")
+const todoRoutes = require("./routes/todo.routes")
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname,"public")));
 
 // routes
-app.use("/todo",todoRouter);
+app.use("/todo",todoRoutes);
 
 app.get("/", (req, res) => {	});
 
