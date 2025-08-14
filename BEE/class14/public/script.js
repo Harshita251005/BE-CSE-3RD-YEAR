@@ -81,3 +81,15 @@ filtersContainer.addEventListener("click",(e)=>{
     allBtns[1].className = "";
   }
 })
+
+// Clear Completed Button
+const clearCompletedBtn = document.getElementById("clear-completed");
+
+clearCompletedBtn.addEventListener("click", async () => {
+  try {
+    await axios.delete("http://localhost:4000/todo/clear-completed"); 
+    getAllTodos(); // refresh UI after clearing
+  } catch (error) {
+    console.error("Error clearing completed todos", error);
+  }
+});
