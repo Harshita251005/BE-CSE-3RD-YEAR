@@ -17,6 +17,13 @@ const userSchema = new mongoose.Schema({
     select:false   
     // this field will not be included when server retrieve 
     // user data from DB
+  },
+  role:{
+    type:String,
+    // user defined data value
+    enum:["user","admin"], // role can only have two values i.e. "user","admin"
+    default:"user",
+    select:false
   }
 },
 {

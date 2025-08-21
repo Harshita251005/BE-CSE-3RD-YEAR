@@ -1,46 +1,47 @@
-const {formatDate, dateConvrter} = require("./helper/date-converter")
+const { formatDate, dateConverter } = require("./helper/date-converter");
 
 let date = formatDate(new Date());
-console.log(date);
+console.log("Formatted:", date);
 
-let localDate = dateConvrter(new Date());
-console.log(localDate);
+let localDate = dateConverter(new Date());
+console.log("Local:", localDate);
 
 const fs = require("fs");
 
-// async approach
-// console.log("1");
-// fs.writeFile("./text.txt","hello world !!",(err)=>{
-//   console.log(err);
-//   console.log("done");
-// })
-
-// console.log(2);
-
-// console.log(1);
-// const result = fs.writeFileSync("./text2.txt","hello warld !!!");
-// console.log(result);
-// console.log(2);
-
 console.log(1);
 
-fs.readFile("./text.txt","utf-8",(err,data)=>{
-  console.log("Async",data);
-})
+// ---- Async Read ----
+fs.readFile("./text.txt", "utf-8", (err, data) => {
+  if (err) {
+    console.log("Read Error:", err);
+  } else {
+    console.log("Async Read:", data);
+  }
+});
+
 console.log(2);
 
-const data = fs.readFileSync("./text.txt","utf-8");
-console.log("sync",data);
+// ---- Sync Read ----
+try {
+  const data = fs.readFileSync("./text.txt", "utf-8");
+  console.log("Sync Read:", data);
+} catch (err) {
+  console.log("Sync Read Error:", err);
+}
 
-// to update file
-fs.appendFile("./text.txt","\n hello again",(err)=>{
-  console.log("Async ","done");
-})
+// ---- Append File ----
+fs.appendFile("./text.txt", "\n hello again", (err) => {
+  if (err) console.log("Append Error:", err);
+  else console.log("Async Append done");
+});
 
-fs.appendFileSync("./text.txt","\n this is pushed by sync");
+fs.appendFileSync("./text.txt", "\n this is pushed by sync");
 
-// to delte file
-fs.unlink("./text.txt",(err)=>{
-  console.log(err);
-  console.log("file deleted");
+// ---- Delete File ----
+fs.unlink("./text.txt", (err) => {
+  if (err) {
+    console.log("Delete Error:", err);
+  } else {
+    console.log("File deleted");
+  }
 });
