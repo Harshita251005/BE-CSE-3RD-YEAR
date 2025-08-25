@@ -24,6 +24,15 @@ const userSchema = new mongoose.Schema({
     enum:["user","admin"], // role can only have two values i.e. "user","admin"
     default:"user",
     select:false
+  },
+  package:{
+    type:String,
+    enum:["free","gold","platinum"],
+    default:"free"
+  },
+  credits:{
+    type:Number,
+    default:0
   }
 },
 {

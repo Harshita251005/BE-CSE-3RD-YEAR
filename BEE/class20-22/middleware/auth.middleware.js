@@ -8,7 +8,7 @@ async function verifyAuth(req,res,next){
     //jwt.verify will create an error if invalid token
     req.user = payload;
     // added a key "user" in req object
-    next()
+    next();
   } catch (error) {
     console.log(error);
     res.status(400).json({message:"you are not authorized, please login first"})
