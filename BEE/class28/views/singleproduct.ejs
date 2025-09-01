@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f5f5f5;
+        margin: 0;
+        padding: 0;
+      }
+      .products-container {
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        padding: 32px;
+        width: 340px;
+        margin: 60px auto;
+        text-align: center;
+      }
+      .products-container img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 6px;
+        margin-bottom: 18px;
+        background: #eee;
+      }
+      .products-container h2 {
+        font-size: 1.5em;
+        margin: 12px 0 8px;
+        color: #222;
+      }
+      .products-container h3 {
+        font-size: 1.1em;
+        color: #007bff;
+        margin: 8px 0;
+      }
+      .products-container p {
+        font-size: 1em;
+        color: #555;
+        margin-bottom: 22px;
+      }
+      .products-container button {
+        background: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1em;
+        margin: 0 6px 10px 6px;
+        transition: background 0.2s;
+        display: inline-block;
+      }
+      .products-container button:hover {
+        background: #0056b3;
+      }
+      .products-container button:nth-child(5) {
+        background: #ffc107;
+        color: #222;
+      }
+      .products-container button:nth-child(6) {
+        background: #e5e4e2;
+        color: #222;
+      }
+      .products-container button:nth-child(5):hover {
+        background: #e0a800;
+      }
+      .products-container button:nth-child(6):hover {
+        background: #bdbdbd;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div id="<%= product._id %>" class="products-container">
+      <img src="<%= product.image %>" alt="<%= product.name %>" />
+      <h2><%= product.name %></h2>
+      <h3>Price: <%= product.price %></h3>
+      <p><%= product.description %></p>
+      <button onclick="buyNormal()">Buy</button>
+      <button onclick="buyGold()">Buy with gold(10% OFF)</button>
+      <button onclick="buyPlatinum()">Buy with platinum(20% OFF)</button>
+    </div>
+    <script>
+      const div = document.getElementsByTagName("div")[0];
+      const productId = div.id;
+      async function buyNormal() {
+        try {
+          const response = await axios.post(
+            `/product/buy/${productId}`,
+            {},
+            { withCredentials: true }
+          );
+          alert("Product bought successfully!");
+        } catch (error) {
+          alert(error.message);
+        }
+      }
+      async function buyGold() {
+        try {
+          // Get the discounted price for gold users
+          const goldRes = await axios.get(
+            `/product/gold/discount/${productId}`,
+            { withCredentials: true }
+          );
+          const newPrice = goldRes.data.discountedPrice;
+          // Buy the product with the new price
+          const response = await axios.post(
+            `/product/buy/gold`,
+            { productId, newPrice },
+            { withCredentials: true }
+          );
+          alert("Product bought successfully with gold discount!");
+        } catch (error) {
+          alert(error.message);
+        }
+      }
+      async function buyPlatinum() {
+        try {
+          // Get the discounted price for platinum users
+          const platinumRes = await axios.get(
+            `/product/platinum/discount/${productId}`,
+            { withCredentials: true }
+          );
+          const newPrice = platinumRes.data.discountedPrice;
+          // Buy the product with the new price
+          const response = await axios.post(
+            `/product/buy/platinum`,
+            { productId, newPrice },
+            { withCredentials: true }
+          );
+          alert("Product bought successfully with platinum discount!");
+        } catch (error) {
+          alert(error.message);
+        }
+      }
+    </script>
+  </body>
+</html>
